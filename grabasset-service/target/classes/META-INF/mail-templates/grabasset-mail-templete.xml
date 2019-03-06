@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmt:mail-templates xmlns:gmt="http://grabasset.com/1.0/mail"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://grabasset.com/1.0/mail ../../../target/classes/grabasset-mail-templet.xsd ">
+	<gmt:mail-template name="customer-registration">
+		<gmt:subject>GrabAsset Registration verification</gmt:subject>
+		<gmt:message><![CDATA[
+			hai ${username}, welcome to GrabAsset.com please click Here
+			http://${host}:${port}/grabasset.com/${userid}/${activationcode}/activateUser.htm"
+		]]></gmt:message>
+	</gmt:mail-template>
+</gmt:mail-templates>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="springMailService" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.host">mail.s-force.org</prop>
+				<prop key="mail.smtp.port">2525</prop>
+				<prop key="mail.smtp.auth">true</prop>
+			</props>
+		</property>
+		<property name="username" value="somthing@s-force.org" />
+		<property name="password" value="somthing"></property>
+	</bean>
+
+	<bean id="springMail" class="com.grabasset.mail.sender.SpringmailSender">
+		<property name="javaMailSender" ref="springMailService" />
+	</bean>
+
+	<bean id="mailTempleteService" class="com.grabasset.mail.service.MailTemplateService">
+		<property name="manager" ref="mailTemplateManager" />
+		<property name="mailSender" ref="springMail" />
+	</bean>
+
+	<bean id="mailTemplateManager" class="com.grabasset.mail.manager.MailTemplateManager" />
+</beans>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="base-definition-no-menu"
+		template="/WEB-INF/views/tiles/layouts/ga-no-menu-layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/footer.jsp" />
+	</definition>
+	<definition name="base-definition"
+		template="/WEB-INF/views/tiles/layouts/ga-layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/template/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="title"
+			value="/WEB-INF/views/tiles/template/menu.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/footer.jsp" />
+	</definition>
+
+
+	<definition name="home" extends="base-definition-no-menu">
+		<put-attribute name="title" value="Welcome to grabasset" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/home.jsp" />
+	</definition>
+
+	<definition name="user-registration-form" extends="base-definition-no-menu">
+		<put-attribute name="title" type="String" value="customer registration" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/jsp/user-registration-form.jsp" />
+	</definition>
+
+	<definition name="user-registration-success" extends="base-definition-no-menu">
+		<put-attribute name="title" type="String" value="registration-success" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/jsp/user-registration-success.jsp" />
+	</definition>
+	<definition name="user-activation-success" extends="base-definition-no-menu">
+		<put-attribute name="title" type="String"
+			value="user-activation-success" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/jsp/user-activation-success.jsp" />
+	</definition>
+
+	<definition name="user-activation-failed" extends="base-definition-no-menu">
+		<put-attribute name="title" type="String"
+			value="user-activation-failed" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/jsp/user-activation-failed.jsp" />
+	</definition>
+	<definition name="user-login" extends="base-definition-no-menu">
+		<put-attribute name="title" type="String" value="User Login" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/jsp/user-login.jsp" />
+	</definition>
+
+	<definition name="logout" extends="base-definition-no-menu">
+		<put-attribute name="title" type="String" value="sucessfully logged out" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/jsp/logout.jsp" />
+	</definition>
+
+	<definition name="dashboard" extends="base-definition-no-menu">
+		<put-attribute name="title" type="String" value="sucessfully logged out" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/jsp/member-dashboard.jsp" />
+	</definition>
+
+
+</tiles-definitions>
